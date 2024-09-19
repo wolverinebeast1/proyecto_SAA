@@ -26,3 +26,4 @@ imshow(im_left)
 figure
 imshow(im_3)
 disp("Modificacion de Hector")
+disp("Modificacion 2")
