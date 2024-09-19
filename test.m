@@ -25,4 +25,4 @@ figure
 imshow(im_left)
 figure
 imshow(im_3)
-disp("Modificado")
+disp("Modificacion de Hector")
