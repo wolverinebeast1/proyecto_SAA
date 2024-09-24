@@ -28,13 +28,13 @@ im_left(:,:,2) = b(:,:,2); % Verde
 im_left(:,:,3) = b(:,:,3);% Azul
 
 % Movemos la imagen izquierda
-separacion = 5;
+separacion = 10;
 im_left(:,1:end-separacion+1,:) = im_left(:,separacion:end,:);
 im_left(:,end-separacion:end,:) = 0;
 
 % Movemos la imagen derecha
-im_right(:,separacion:end,:) = im_right(:,separacion:end,:);
-im_right(:,1:separacion-1,:) = 0;
+im_right(:,separacion:end,:) = im_right(:,1:end-separacion+1,:);
+im_right(:,1:separacion,:) = 0;
 
 % Juntamos imagen
 im_3 = im_right+im_left;
