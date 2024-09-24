@@ -9,11 +9,6 @@ im_right(:,:,1) = im(:,:,1);% Rojo
 im_left(:,:,2) = im(:,:,2); % Verde 
 im_left(:,:,3) = im(:,:,3);% Azul
 
-% Movemos la imagen izquierda
-separacion = 50;
-im_left(1:end-separacion,1:end-separacion,:) = im_left(separacion:end-(separacion-1),separacion:end-(separacion-1),:);
-im_left(end-separacion+1:end,end-separacion+1:end,:) = 0;
-
 % Juntamos imagen
 im_3 = im_right+im_left;
 
@@ -27,3 +22,4 @@ figure
 imshow(im_3)
 disp("Modificacion de Hector")
 disp("Modificacion de Ruslan")
+disp("Mod Joan")
