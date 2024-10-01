@@ -1,7 +1,12 @@
 clear all; close all; clc;
 im = imread('osito.jpg');
+im = imresize(im,[1080 1080]);
 [fila,colm,color] = size(im);
 table(fila, colm, color)
+
+% Imagen fondo
+fondo = imread("img.jpg");
+fondo = imresize(fondo, [1080, 1080]);
 
 nC = 2;
 Lab_A = rgb2lab(im);
@@ -18,7 +23,9 @@ imshow(a)
 figure
 imshow(b)
 
-
+fondo = fondo.*uint8(1-mask);
+figure
+imshow(fondo)
 
 %Separamos por lados
 im_right = zeros(fila,colm,color, "uint8");
@@ -37,7 +44,7 @@ im_right(:,separacion:end,:) = im_right(:,1:end-separacion+1,:);
 im_right(:,1:separacion,:) = 0;
 
 % Juntamos imagen
-im_3 = im_right+im_left;
+im_3 = fondo+im_right+im_left;
 
 % Representamos
 figure
