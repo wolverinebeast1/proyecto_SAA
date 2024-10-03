@@ -1,5 +1,9 @@
 clear all; close all; clc;
+
 im = imread('banana.jpg');
+
+im = imread('osito.jpg');
+
 im = imresize(im,[1080 1080]);
 [fila,colm,color] = size(im);
 table(fila, colm, color)
@@ -49,8 +53,12 @@ im_right(:,separacion:end,:) = im_right(:,1:end-separacion+1,:);
 im_right(:,1:separacion,:) = 0;
 
 % Juntamos imagen
+
 im_segmentada= im_right+im_left;
 im_3 = fondo+im_segmentada;
+
+im_3 = fondo+im_right+im_left;
+
 
 % Representamos
 figure
@@ -61,5 +69,6 @@ figure
 imshow(im_left)
 figure
 imshow(im_3)
+
 
 
