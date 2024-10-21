@@ -1,4 +1,4 @@
-% Código hecho con IA
+clear all; clc; close all;
 % Cargar la imagen y convertirla a escala de grises
 img = imread('Prof_0.jpg');
 gray_img = rgb2gray(img);
